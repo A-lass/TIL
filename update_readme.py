@@ -1,7 +1,11 @@
+import base64
 import os
 from datetime import datetime, timedelta
 
+import requests
+
 REPOSITORY = os.environ.get('GITHUB_REPOSITORY')
+GH_TOKEN = os.environ.get('GH_TOKEN')
 
 GIT_URL = f"https://github.com/{REPOSITORY}/blob/main"
 ROOT = "./"
@@ -58,5 +62,29 @@ for dir in dirs:
 
 print(f"Create README\n{readme}")
 
-with open("../README.md", 'w', encoding='utf-8') as f:
-    f.write(readme)
+update_url = f"https://api.github.com/repos/{REPOSITORY}/contents/README.md"
+headers = {
+    "Authorization": f"token {GH_TOKEN}"
+}
+
+response = requests.get(update_url, headers=headers)
+
+if response.status_code == 200:
+    # Update the content
+    data = {
+        "message": "Update Solved Content",
+        # 생성된 파일 내용을 base64로 인코딩
+        "content": base64.b64encode(readme.encode('UTF-8')).decode('ascii'),
+        "sha": response.json()["sha"],
+    }
+
+    response = requests.put(update_url, json=data, headers=headers)
+
+    if response.status_code == 200:
+        print("README updated successfully.")
+    else:
+        print(f"Failed to update README. Status code: {response.status_code}")
+        print(f"Response Content: {response.content}")
+else:
+    print(f"Failed to fetch README content. Status code: {response.status_code}")
+    print(f"Response Content: {response.content}")
