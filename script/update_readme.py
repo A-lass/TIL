@@ -24,7 +24,7 @@ def get_title_md(target_title, target_count):
 
 def get_file_md(target_dir, target_file, ktc):
     target_file_url = f"{GIT_URL}/{target_dir}/{target_file}"
-    return f"- [[{ktc}]  {split_extension(file)}]({target_file_url})\n"
+    return f"- [**[{ktc}]**  {split_extension(file)}]({target_file_url})\n"
 
 
 def write_file(target, add):
@@ -32,6 +32,8 @@ def write_file(target, add):
 
 
 def split_extension(file_name):
+    # 언더바 -> 공백 변환
+    file_name = file_name.replace("_", " ")
     if "." in file_name:
         return file_name.rsplit('.', 1)[0]
     return file_name
