@@ -20,7 +20,7 @@ def get_title_md(target_title, target_count):
 
 def get_file_md(target_dir, target_file, ktc):
     target_file_url = f"{GIT_URL}/{target_dir}/{target_file}"
-    return f"- [[{ktc}]  {target_file}]({target_file_url})\n"
+    return f"- [[{ktc}]  {split_extension(file)}]({target_file_url})\n"
 
 
 def write_file(target, add):
@@ -54,7 +54,7 @@ for dir in dirs:
 
     for file in files:
         ktc = get_update_time_ktc(path)
-        readme = write_file(readme, get_file_md(dir, split_extension(file), ktc))
+        readme = write_file(readme, get_file_md(dir, file, ktc))
 
 print(f"Create README\n{readme}")
 

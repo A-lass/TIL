@@ -26,9 +26,9 @@ jobs:
         python script/update_readme.py
     - name: Run Update README.md File
       run: |
-        git add .
-        git diff
         git config --local user.email "ddingminyt@gmail.com"
         git config --local user.name "ddingmin"
-        git commit -m ":smile Add Today I Learned"
+        
+        git add README.md
+        git commit -m "[Bot] Add Today I Learned"
         git push
