@@ -58,5 +58,5 @@ for dir in dirs:
 
 print(f"Create README\n{readme}")
 
-with open("./README.md", 'w', encoding='utf-8') as f:
+with open("../README.md", 'w', encoding='utf-8') as f:
     f.write(readme)
