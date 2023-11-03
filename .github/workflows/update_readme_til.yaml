@@ -1,10 +1,8 @@
 name: Python application
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+  schedule:
+    - cron: '0 21 * * *'  # 한국 시간 기준, 매일 아침 6시에 실행
   workflow_dispatch:
 
 jobs:
