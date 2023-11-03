@@ -72,7 +72,7 @@ response = requests.get(update_url, headers=headers)
 if response.status_code == 200:
     # Update the content
     data = {
-        "message": "Update Solved Content",
+        "message": "[Bot] Add Today I Learned",
         # 생성된 파일 내용을 base64로 인코딩
         "content": base64.b64encode(readme.encode('UTF-8')).decode('ascii'),
         "sha": response.json()["sha"],
