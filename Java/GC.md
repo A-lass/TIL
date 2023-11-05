@@ -88,7 +88,9 @@
 * 단점
     * 순환 참조 문제가 발생할 수 있다.
 
-### Mark and Sweep
+<br/>
+
+### Mark-and-Sweep
 ![image](https://github.com/A-lass/TIL/assets/84514047/664095c0-e8af-46d1-bf68-afddf788b093)
 * 자바에서 사용되는 메모리 관리 방식
 * Reference Counting 알고리즘의 순환 참조 문제를 해결할 수 있다.
@@ -162,7 +164,7 @@
 <br/><br/>
 
 ### Ref.
-[이상민, 『개발자가 반드시 알아야 할 자바 성능 튜닝 이야기』, 인사이트(insight), 2013.](https://www.yes24.com/Product/Goods/11261731)
-[[10분 테코톡] 🤔 조엘의 GC](https://www.youtube.com/watch?v=FMUpVA0Vvjw&list=LL&index=30&t=511s&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)
-https://rebelsky.cs.grinnell.edu/Courses/CS302/99S/Presentations/GC/
-https://www.waitingforcode.com/off-heap/on-heap-off-heap-storage/read
+[이상민, 『개발자가 반드시 알아야 할 자바 성능 튜닝 이야기』, 인사이트(insight), 2013.](https://www.yes24.com/Product/Goods/11261731)  
+[[10분 테코톡] 🤔 조엘의 GC](https://www.youtube.com/watch?v=FMUpVA0Vvjw&list=LL&index=30&t=511s&ab_channel=%EC%9A%B0%EC%95%84%ED%95%9C%ED%85%8C%ED%81%AC)  
+https://rebelsky.cs.grinnell.edu/Courses/CS302/99S/Presentations/GC/  
+https://www.waitingforcode.com/off-heap/on-heap-off-heap-storage/read  
